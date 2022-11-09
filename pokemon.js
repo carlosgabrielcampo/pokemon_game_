@@ -8,6 +8,20 @@
 // Defesa: 50
 // Dano total recebido: 60 * (1 - 0,5) = 30
 
+// Se o Pokemon tiver vantagem de tipo, ele tem um bônus de 10% no seu ataque
+
+const tipos = {
+  "Elétrico": {
+    forteContra: ['Água', 'Voador', 'Fogo'],
+    fracoContra: ['Elétrico', 'Grama', 'Terra', 'Dragão']
+  }, 
+  "Fogo": {
+    forteContra: ['Inseto', 'Planta', 'Gelo', 'Aço'],
+    fracoContra: ['Pedra', 'Terrestre', 'Água']
+  }
+}
+
+
 
 const pikachu = {
   tipo: "Elétrico",
@@ -19,7 +33,7 @@ const pikachu = {
     "Ataque Rápido": {
       dano: 20,
       energiaConsumida: 18,
-      chanceDeAcerto: 100
+      chanceDeAcerto: 80
     },
     "Investida Trovão": {
       dano: 30,
@@ -28,8 +42,8 @@ const pikachu = {
     },
     "Choque do Trovão":  {
       dano: 40,
-      energiaConsumida: 28,
-      chanceDeAcerto: 60
+      energiaConsumida: 20,
+      chanceDeAcerto: 50
     }
   } 
 }
@@ -42,9 +56,9 @@ const charizard = {
   defesa: 60,
   ataques: { 
     "Lança-Chamas": {
-      dano: 60,
+      dano: 70,
       energiaConsumida: 28,
-      chanceDeAcerto: 80
+      chanceDeAcerto: 40
     },
     "Rajada de Chamas": {
       dano: 39,
@@ -59,6 +73,26 @@ const charizard = {
   } 
 }
 
-// function ataque
+// function attack
+// Essa Função deve receber o Pokemon que vai atacar, o nome do ataque, e o pokemon a ser atacado como parâmetros
+// O valor do ataque deve ser de acordo com as regra já pré estabelecidas e o pokemon adversário deve ter seu status alterado
+
 
 // function regen
+// Essa Função deve receber o Nome Pokemon como parâmetro 
+// Ele terá sua vida restaurada em x Pontos
+
+
+// function focus
+// Essa Função deve receber o Nome do Pokemon como parâmetro 
+// Todos os seus ataques com uma chance de acerto de mais 20%
+
+
+// function defense
+// Essa Função deve receber o Nome do Pokemon como parâmetro 
+// A sua defesa terá um bônus de 20%
+
+
+// function learn
+// Essa Função deve receber o Nome do Pokemon principal e o nome do Pokemon adversário como parâmetros   
+// O pokemon principal deverá aprender um dos movimentos do seu adversário e poderá utilizá-lo 
